@@ -1,0 +1,149 @@
+﻿<Window x:Class="FilesOrganizer.Views.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:vm="clr-namespace:FilesOrganizer.ViewModels"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:FilesOrganizer.Views"
+        xmlns:behaviors="clr-namespace:FilesOrganizer.ViewModels"
+        mc:Ignorable="d"
+        Background="CornflowerBlue"
+        Title="Settings" Height="400" Width="500"
+        ResizeMode="NoResize"
+        FontFamily="Cambria">
+    <i:Interaction.Behaviors>
+        <behaviors:SaveOnCloseBehavior/>
+    </i:Interaction.Behaviors>
+    <Window.Resources>
+        <Style x:Key="RoundCornerButton" TargetType="Button">
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="Gray"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Border BorderBrush="Black" BorderThickness="2" Margin="10">
+        <Grid Background="GhostWhite" Margin="10" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <Label Content="Settings" Grid.Row="0" FontSize="20" HorizontalAlignment="Center" Margin="0 0 0 0"/>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Margin="30 0 0 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Check for code in:" Grid.Row="0" VerticalAlignment="Center" Margin="20 10 0 0" Height="25" FontSize="16"/>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center" Margin="20 10 0 0" Height="25">
+                        <CheckBox Content="Images" IsChecked="{Binding SettingsDatas.ImagesCode}" Grid.Row="4" Margin="0 0 0 0" FontSize="14"/>
+                        <CheckBox Content="Videos" IsChecked="{Binding SettingsDatas.VideosCode}" Grid.Row="4" Margin="20 0 0 0" FontSize="14"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20 10 0 0" Height="25">
+                        <CheckBox Content="Text files" IsChecked="{Binding SettingsDatas.TextFilesCode}" Grid.Row="4" FontSize="14"/>
+                    </StackPanel>
+
+                    <TextBlock Text="Check language in:" Grid.Row="3" VerticalAlignment="Center" Margin="20 10 0 0" Height="25" FontSize="16"/>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="4" VerticalAlignment="Center" Margin="20 10 0 0" Height="25">
+                        <CheckBox Content="Images" IsChecked="{Binding SettingsDatas.ImagesLanguage}" Grid.Row="4" Margin="0 0 0 0" FontSize="14"/>
+                        <CheckBox Content="Videos" IsChecked="{Binding SettingsDatas.VideosLanguage}" Grid.Row="4" Margin="20 0 0 0" FontSize="14"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="5" VerticalAlignment="Center" Margin="20 10 0 0" Height="25">
+                        <CheckBox Content="Text Files" IsChecked="{Binding SettingsDatas.TextFilesLanguage}" Grid.Row="4" Margin="0 0 0 0" FontSize="14"/>
+                        <CheckBox Content="Audios" IsChecked="{Binding SettingsDatas.AudiosLanguage}" Grid.Row="4" Margin="20 0 0 0" FontSize="14"/>
+                    </StackPanel>
+
+                </Grid>
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+
+                    </Grid.RowDefinitions>
+
+                    <Button Grid.Row="0" Command="{Binding Path=Commands.RecheckCodeCommand}" Background="CornflowerBlue" BorderThickness="2" Foreground="White" Content="Recheck code " Style="{StaticResource RoundCornerButton}"  Margin="5 0 0 0"  Width="160" Height="28" FontSize="14"/>
+                    <Button Grid.Row="1" Command="{Binding Path=Commands.RecheckLanguageCommand}" Background="CornflowerBlue" BorderThickness="2" Foreground="White" Content="Recheck language" Style="{StaticResource RoundCornerButton}" Width="160" Height="28" FontSize="14"/>
+                    <Button Grid.Row="2" Background="CornflowerBlue" BorderThickness="2" Foreground="White" Content="Check working spaces" Style="{StaticResource RoundCornerButton}"  Margin="5 0 0 0"  Width="160" Height="28" FontSize="14"/>
+                    <ToggleButton Grid.Row="3" IsChecked="{Binding SettingsDatas.FilterType}" Margin="5 0 0 0"  Width="160" Height="28" FontSize="14" Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked" Content="Reunion at filtering">
+                        <ToggleButton.Style>
+                            <Style TargetType="ToggleButton">
+                                <Setter Property="Background" Value="CornflowerBlue"/>
+                                <Setter Property="BorderBrush" Value="Black"/>
+                                <Setter Property="BorderThickness" Value="2"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Content" Value="Check all"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ToggleButton">
+                                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsChecked" Value="True">
+                                        <Setter Property="Background" Value="CornflowerBlue"/>
+                                        <Setter Property="Foreground" Value="White"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ToggleButton.Style>
+                    </ToggleButton>
+                </Grid>
+
+            </Grid>
+
+            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock FontSize="16" Text="Similarity threshold:" Margin="0 0 20 0 "/>
+                <xctk:IntegerUpDown Minimum="0" Maximum="100" Value="{Binding SettingsDatas.SimilarityThreshold}" Width="60"/>
+            </StackPanel>
+
+            <Button Background="CornflowerBlue" BorderThickness="2" Foreground="White" Content="OK" Grid.Row="4" HorizontalAlignment="Center" Margin="0 15 0 0" Style="{StaticResource RoundCornerButton}" Width="160" Height="28" FontSize="14" Click="Close"/>
+
+        </Grid>
+    </Border>
+</Window>

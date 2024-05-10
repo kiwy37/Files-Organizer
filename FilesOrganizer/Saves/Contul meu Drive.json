@@ -1,0 +1,992 @@
+{
+  "DriveOdLocal": true,
+  "FiltersResults": null,
+  "SearchResults": null,
+  "CurrentListBoxSource": [
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "poza",
+      "Extension": "Folder",
+      "Path": "Contul meu Drive",
+      "Icon": "Folder",
+      "Status": 0,
+      "Id": "1Sda7QlOYTc2NIUMILwghjvrus7jNlxAf",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF1E90FF",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "a",
+      "Extension": "Folder",
+      "Path": "Contul meu Drive",
+      "Icon": "Folder",
+      "Status": 0,
+      "Id": "1vV-zc5H-Z3lJfw-c-dWWQHBTB65tG8sp",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF1E90FF",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "IMG_1079.MOV",
+      "Extension": ".mov",
+      "Path": "Contul meu Drive",
+      "Icon": "FileVideoOutline",
+      "Status": 0,
+      "Id": "1WHco8q4MrgoFux8_KyMD0Y_sT9gQPhQh",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF4169E1",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "ceva",
+      "Extension": ".mov",
+      "Path": "Contul meu Drive",
+      "Icon": "FileVideoOutline",
+      "Status": 0,
+      "Id": "1ZmGpFO2ITdRhHoUvdLedbEc5SQSWktFP",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF4169E1",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "Copie a fișierului RPReplay_Final1587588659.mp4",
+      "Extension": ".mp4",
+      "Path": "Contul meu Drive",
+      "Icon": "FileVideoOutline",
+      "Status": 0,
+      "Id": "1EqkfZ1HrTmjxYwz3rGlRmzsE04my5K2V",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF4169E1",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "RPReplay_Final1587588659.mp4",
+      "Extension": ".mp4",
+      "Path": "Contul meu Drive",
+      "Icon": "FileVideoOutline",
+      "Status": 0,
+      "Id": "1W9W2WbGgd3Qd4A70eaUQ57w1V_msevq-",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF4169E1",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "Fisiere",
+      "Extension": "Folder",
+      "Path": "Contul meu Drive",
+      "Icon": "Folder",
+      "Status": 0,
+      "Id": "1FB7XZ2WVD34Wk0WePX2qi2gPOUZdl8nK",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF1E90FF",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "Examen IOC",
+      "Extension": ".docx",
+      "Path": "Contul meu Drive",
+      "Icon": "FileWord",
+      "Status": 0,
+      "Id": "1y3v8IhWubhDWIHqAQDLPkAlmCfarmAoks4NoP-7Lijk",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF00008B",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "CV - Ramona-Maria Băjan.pdf",
+      "Extension": ".pdf",
+      "Path": "Contul meu Drive",
+      "Icon": "FilePdfBox",
+      "Status": 0,
+      "Id": "1pIEY8Es7DyXYqVprbEho4cXs0L6ZsS4_",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FFFF0000",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "ADMISI-TAXA-MATEMATICA2020",
+      "Extension": ".docx",
+      "Path": "Contul meu Drive",
+      "Icon": "FileWord",
+      "Status": 0,
+      "Id": "1Z-6DglYUpDnDrsBZQSTvNEBocEgGn60JS2IJBFLyrmw",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF00008B",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "Premii-MateInfoUB-etapaII-Informatica",
+      "Extension": ".docx",
+      "Path": "Contul meu Drive",
+      "Icon": "FileWord",
+      "Status": 0,
+      "Id": "1RRHuACgwYotywO1MDcNGgZPv2yHkO2WnKXjmLmVX4d4",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF00008B",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "Premii-MateInfoUB-etapaII-Informatica",
+      "Extension": ".docx",
+      "Path": "Contul meu Drive",
+      "Icon": "FileWord",
+      "Status": 0,
+      "Id": "1aEsLBtVkdBi2h9bo6Lb9brwbncDru1sZ7YRJBZrdTW0",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF00008B",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    }
+  ],
+  "IsItemsListBoxVisible": false,
+  "IsFilteredItemsListBoxVisible": false,
+  "Categories": [
+    {
+      "CategoryName": "All Items",
+      "Name": "White",
+      "TextColor": null,
+      "Col": "#FFFFFFFF"
+    },
+    {
+      "CategoryName": "None",
+      "Name": "White",
+      "TextColor": null,
+      "Col": "#FFFFFFFF"
+    }
+  ],
+  "CategoriesWithoutNone": [],
+  "AllItems": [
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "sample1.txt",
+      "Extension": ".txt",
+      "Path": "Contul meu Drive\\Fisiere",
+      "Icon": "TextBox",
+      "Status": 0,
+      "Id": "1NkEe6wLaCimd2CcS_I2i_oTAnweRyqGn",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF00BFFF",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "Registru1 (version 1).xlsx",
+      "Extension": ".xlsx",
+      "Path": "Contul meu Drive\\a",
+      "Icon": "FileExcel",
+      "Status": 0,
+      "Id": "1ViIadyer526GBBuhT3mprh96MsAnbjAB",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF006400",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "Registru1 (version 1).xlsx",
+      "Extension": ".xlsx",
+      "Path": "Contul meu Drive\\poza",
+      "Icon": "FileExcel",
+      "Status": 0,
+      "Id": "1jgSXYZfil7kFRF31nr68Z9-o0UTqKuZa",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF006400",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "pexels-brad-cox-262051934-12665910 - Copy.jpg",
+      "Extension": ".jpg",
+      "Path": "Contul meu Drive\\poza",
+      "Icon": "ImageJpgBox",
+      "Status": 0,
+      "Id": "10CLx4a2dFmTFWB_aHu1kfBupdwxGwnb2",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FFFF0000",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "pexels-brad-cox-262051934-12665910",
+      "Extension": ".jpg",
+      "Path": "Contul meu Drive\\poza",
+      "Icon": "ImageJpgBox",
+      "Status": 0,
+      "Id": "1TcZgP4HLw3crkYzW4tsvgdhNUz287v37",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FFFF0000",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "poza",
+      "Extension": "Folder",
+      "Path": "Contul meu Drive",
+      "Icon": "Folder",
+      "Status": 0,
+      "Id": "1Sda7QlOYTc2NIUMILwghjvrus7jNlxAf",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF1E90FF",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "c1",
+      "Extension": "Folder",
+      "Path": "Contul meu Drive\\a\\b1",
+      "Icon": "Folder",
+      "Status": 0,
+      "Id": "117t0bvrvqMRf3_U2GJaeEWdvfiKA70er",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF1E90FF",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "c",
+      "Extension": "Folder",
+      "Path": "Contul meu Drive\\a\\b",
+      "Icon": "Folder",
+      "Status": 0,
+      "Id": "1_7K54KJb5ZhIt8VzSMmdJ422ohl9QQEb",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF1E90FF",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "b1",
+      "Extension": "Folder",
+      "Path": "Contul meu Drive\\a",
+      "Icon": "Folder",
+      "Status": 0,
+      "Id": "1YK1dICTdsvqyhazfUWZ2CvWDp5MF2kKS",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF1E90FF",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "b",
+      "Extension": "Folder",
+      "Path": "Contul meu Drive\\a",
+      "Icon": "Folder",
+      "Status": 0,
+      "Id": "14C_i2jSBQPA9MDK9IPrUr0f7k8wYWW8R",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF1E90FF",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "a",
+      "Extension": "Folder",
+      "Path": "Contul meu Drive",
+      "Icon": "Folder",
+      "Status": 0,
+      "Id": "1vV-zc5H-Z3lJfw-c-dWWQHBTB65tG8sp",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF1E90FF",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "IMG_1079.MOV",
+      "Extension": ".mov",
+      "Path": "Contul meu Drive",
+      "Icon": "FileVideoOutline",
+      "Status": 0,
+      "Id": "1WHco8q4MrgoFux8_KyMD0Y_sT9gQPhQh",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF4169E1",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "ceva",
+      "Extension": ".mov",
+      "Path": "Contul meu Drive",
+      "Icon": "FileVideoOutline",
+      "Status": 0,
+      "Id": "1ZmGpFO2ITdRhHoUvdLedbEc5SQSWktFP",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF4169E1",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "Copie a fișierului RPReplay_Final1587588659.mp4",
+      "Extension": ".mp4",
+      "Path": "Contul meu Drive",
+      "Icon": "FileVideoOutline",
+      "Status": 0,
+      "Id": "1EqkfZ1HrTmjxYwz3rGlRmzsE04my5K2V",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF4169E1",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "RPReplay_Final1587588659.mp4",
+      "Extension": ".mp4",
+      "Path": "Contul meu Drive",
+      "Icon": "FileVideoOutline",
+      "Status": 0,
+      "Id": "1W9W2WbGgd3Qd4A70eaUQ57w1V_msevq-",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF4169E1",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "Fisiere",
+      "Extension": "Folder",
+      "Path": "Contul meu Drive",
+      "Icon": "Folder",
+      "Status": 0,
+      "Id": "1FB7XZ2WVD34Wk0WePX2qi2gPOUZdl8nK",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF1E90FF",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "file-sample_1MB.rtf",
+      "Extension": ".doc",
+      "Path": "Contul meu Drive\\Fisiere",
+      "Icon": "FileWord",
+      "Status": 0,
+      "Id": "1WBd1CXQydaOjOcM12OrgxfmQcTwpTTfD",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF00008B",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "file-sample_1MB.odt",
+      "Extension": ".odt",
+      "Path": "Contul meu Drive\\Fisiere",
+      "Icon": "File",
+      "Status": 0,
+      "Id": "1PP8RrT0qyHupdVDEcHaJosAl1AHw0WDU",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF778899",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "file-sample_1MB.doc",
+      "Extension": ".doc",
+      "Path": "Contul meu Drive\\Fisiere",
+      "Icon": "FileWord",
+      "Status": 0,
+      "Id": "1HQcjk-m5NOG4mr5Ml5TUG_2KtzoEQCDP",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF00008B",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "file-sample_1MB.docx",
+      "Extension": ".docx",
+      "Path": "Contul meu Drive\\Fisiere",
+      "Icon": "FileWord",
+      "Status": 0,
+      "Id": "1QbVG5hQ73UrIHoKsenStjQaz60q50dIB",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF00008B",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "Examen IOC",
+      "Extension": ".docx",
+      "Path": "Contul meu Drive",
+      "Icon": "FileWord",
+      "Status": 0,
+      "Id": "1y3v8IhWubhDWIHqAQDLPkAlmCfarmAoks4NoP-7Lijk",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF00008B",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "CV - Ramona-Maria Băjan.pdf",
+      "Extension": ".pdf",
+      "Path": "Contul meu Drive",
+      "Icon": "FilePdfBox",
+      "Status": 0,
+      "Id": "1pIEY8Es7DyXYqVprbEho4cXs0L6ZsS4_",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FFFF0000",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "ADMISI-TAXA-MATEMATICA2020",
+      "Extension": ".docx",
+      "Path": "Contul meu Drive",
+      "Icon": "FileWord",
+      "Status": 0,
+      "Id": "1Z-6DglYUpDnDrsBZQSTvNEBocEgGn60JS2IJBFLyrmw",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF00008B",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "Premii-MateInfoUB-etapaII-Informatica",
+      "Extension": ".docx",
+      "Path": "Contul meu Drive",
+      "Icon": "FileWord",
+      "Status": 0,
+      "Id": "1RRHuACgwYotywO1MDcNGgZPv2yHkO2WnKXjmLmVX4d4",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF00008B",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "",
+      "Name": "Premii-MateInfoUB-etapaII-Informatica",
+      "Extension": ".docx",
+      "Path": "Contul meu Drive",
+      "Icon": "FileWord",
+      "Status": 0,
+      "Id": "1aEsLBtVkdBi2h9bo6Lb9brwbncDru1sZ7YRJBZrdTW0",
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "Col": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "",
+      "Color": "#FF00008B",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    }
+  ],
+  "BackStack": [
+    "Contul meu Drive"
+  ],
+  "SpacePath": "Contul meu Drive"
+}

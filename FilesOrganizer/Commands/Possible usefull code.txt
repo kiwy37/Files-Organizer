@@ -1,0 +1,77 @@
+﻿#region Audio
+//private static double CompareAudioFiles(string filePath1, string filePath2)
+//{
+//    var audioFile1 = new AudioFileReader(filePath1);
+//    var audioFile2 = new AudioFileReader(filePath2);
+
+//    var sampleProvider1 = audioFile1.ToSampleProvider();
+//    var sampleProvider2 = audioFile2.ToSampleProvider();
+
+//    if (sampleProvider1.WaveFormat.SampleRate != sampleProvider2.WaveFormat.SampleRate ||
+//        sampleProvider1.WaveFormat.Channels != sampleProvider2.WaveFormat.Channels)
+//    {
+//        //throw new Exception("Files have different formats");
+//        return 0.0;
+//    }
+
+//    float[] buffer1 = new float[sampleProvider1.WaveFormat.SampleRate * sampleProvider1.WaveFormat.Channels];
+//    float[] buffer2 = new float[sampleProvider2.WaveFormat.SampleRate * sampleProvider2.WaveFormat.Channels];
+
+//    int read1, read2;
+//    double distance = 0;
+
+//    do
+//    {
+//        read1 = sampleProvider1.Read(buffer1, 0, buffer1.Length);
+//        read2 = sampleProvider2.Read(buffer2, 0, buffer2.Length);
+
+//        for (int i = 0; i < Math.Min(read1, read2); i++)
+//        {
+//            distance += Math.Pow(buffer1[i] - buffer2[i], 2);
+//        }
+//    } while (read1 > 0 && read2 > 0);
+
+//    return 1 / (1 + Math.Sqrt(distance));
+//}
+#endregion
+#region try with Levenshtein distance
+//private static int CalculateLevenshteinDistance(string string1, string string2)
+//{
+//    var matrix = new int[string1.Length + 1, string2.Length + 1];
+
+//    for (int i = 0; i <= string1.Length; i++)
+//        matrix[i, 0] = i;
+//    for (int j = 0; j <= string2.Length; j++)
+//        matrix[0, j] = j;
+
+//    for (int i = 1; i <= string1.Length; i++)
+//    {
+//        for (int j = 1; j <= string2.Length; j++)
+//        {
+//            int cost = (string1[i - 1] == string2[j - 1]) ? 0 : 1;
+
+//            matrix[i, j] = Math.Min(
+//                Math.Min(matrix[i - 1, j] + 1, matrix[i, j - 1] + 1),
+//                matrix[i - 1, j - 1] + cost);
+//        }
+//    }
+
+//    return matrix[string1.Length, string2.Length];
+//}
+//private static double CompareTextFiles(string filePath1, string filePath2)
+//{
+//    string text1 = System.IO.File.ReadAllText(filePath1);
+//    string text2 = System.IO.File.ReadAllText(filePath2);
+
+//    var diffBuilder = new InlineDiffBuilder(new Differ());
+//    var diff = diffBuilder.BuildDiffModel(text1, text2);
+
+//    double totalLines = diff.Lines.Count;
+//    double changedLines = diff.Lines.Where(line => line.Type != ChangeType.Unchanged)
+//        .Sum(line => line.SubPieces.Any() ? CalculateLevenshteinDistance(line.Text, line.SubPieces[0].Text) : CalculateLevenshteinDistance(line.Text, ""));
+
+//    double similarity = 1.0 - (changedLines / totalLines);
+
+//    return similarity;
+//}
+#endregion

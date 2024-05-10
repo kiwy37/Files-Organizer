@@ -1,0 +1,76 @@
+﻿<Window x:Class="FilesOrganizer.Views.CreateFolderNameAndPathWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FilesOrganizer.Views"
+        xmlns:vm="clr-namespace:FilesOrganizer.ViewModels.Commands"
+        xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
+        mc:Ignorable="d"
+        Background="CornflowerBlue"
+        Title="CreateFolderNameAndPathWindow" Height="225" Width="350">
+    <Grid Margin="10" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="0 10 0 0" Grid.Row="0" HorizontalAlignment="Center" Width="200">
+            <TextBlock Text="Name of the folder:"/>
+        </StackPanel>
+
+        <TextBox Margin="0 10 0 0" Grid.Row="1" Width="200" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TextBox">
+                                <Grid>
+                                    <TextBox Text="{Binding FolderName, UpdateSourceTrigger=PropertyChanged}" Background="White"/>
+                                    <TextBlock Text="Name of the new folder" IsHitTestVisible="False" Foreground="Gray" Margin="5,1,0,0" Visibility="{Binding FolderNameWattermark}"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+
+        <StackPanel Margin="0 10 0 0" Grid.Row="2" HorizontalAlignment="Center" Width="200">
+            <TextBlock Grid.Row="2" Text="Path:"/>
+        </StackPanel>
+
+        <Grid Margin="0 10 0 0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Row="0" Width="175" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TextBox">
+                                    <Grid>
+                                        <TextBox Text="{Binding FolderPath, UpdateSourceTrigger=PropertyChanged}" Background="White"/>
+                                        <TextBlock Text="Select a path" IsHitTestVisible="False" Foreground="Gray" Margin="5,1,0,0" Visibility="{Binding FolderPathWattermark}"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <Button Grid.Column="1" Command="{Binding Path=Commands.SelectPathCreateFolderNameAndPathCommand}" Width="25" Height="20">
+                <materialIcons:MaterialIcon Kind="FolderSearchOutline"/>
+            </Button>
+        </Grid>
+
+        <Button Margin="0 10 0 0" Command="{Binding Path=Commands.NextCreateFolderNameAndPathCommand}" Grid.Row="4" Width="200" Height="20">
+            <materialIcons:MaterialIcon Kind="NavigateNext"/>
+        </Button>
+    </Grid>
+</Window>
