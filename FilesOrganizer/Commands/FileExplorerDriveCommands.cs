@@ -40,7 +40,14 @@ public class FileExplorerDriveCommands
     {
         _fileExplorerDriveVM.PozInList = 0;
         _fileExplorerDriveVM.CurrentPath = _fileExplorerDriveVM.CurrentData.SpacePath;
-        _fileExplorerDriveVM.CurrentData.CurrentListBoxSource = new ObservableCollection<Element>(_fileExplorerDriveVM.CurrentData.AllItems.Where(item => item.Path == _fileExplorerDriveVM.CurrentPath && item.Extension == "Folder").ToList());
+        if (_fileExplorerDriveVM.Option == "Folder")
+        {
+            _fileExplorerDriveVM.CurrentData.CurrentListBoxSource = new ObservableCollection<Element>(_fileExplorerDriveVM.CurrentData.AllItems.Where(item => item.Path == _fileExplorerDriveVM.CurrentPath && item.Extension == "Folder").ToList());
+        }
+        else
+        {
+            _fileExplorerDriveVM.CurrentData.CurrentListBoxSource = new ObservableCollection<Element>(_fileExplorerDriveVM.CurrentData.AllItems.Where(item => item.Path == _fileExplorerDriveVM.CurrentPath).ToList());
+        }
         _fileExplorerDriveVM.CurrentData.BackStack.Clear();
         _fileExplorerDriveVM.CurrentData.BackStack.Add(_fileExplorerDriveVM.CurrentPath);
         _fileExplorerDriveVM.CurrentPathDisplayed = _fileExplorerDriveVM.CurrentPath;
@@ -71,7 +78,14 @@ public class FileExplorerDriveCommands
             _fileExplorerDriveVM.PozInList--;
 
             _fileExplorerDriveVM.CurrentPath = _fileExplorerDriveVM.CurrentData.BackStack.ElementAt(_fileExplorerDriveVM.PozInList);
-            _fileExplorerDriveVM.CurrentData.CurrentListBoxSource = new ObservableCollection<Element>(_fileExplorerDriveVM.CurrentData.AllItems.Where(item => item.Path == _fileExplorerDriveVM.CurrentPath && item.Extension == "Folder").ToList());
+            if (_fileExplorerDriveVM.Option == "Folder")
+            {
+                _fileExplorerDriveVM.CurrentData.CurrentListBoxSource = new ObservableCollection<Element>(_fileExplorerDriveVM.CurrentData.AllItems.Where(item => item.Path == _fileExplorerDriveVM.CurrentPath && item.Extension == "Folder").ToList());
+            }
+            else
+            {
+                _fileExplorerDriveVM.CurrentData.CurrentListBoxSource = new ObservableCollection<Element>(_fileExplorerDriveVM.CurrentData.AllItems.Where(item => item.Path == _fileExplorerDriveVM.CurrentPath).ToList());
+            }
             _fileExplorerDriveVM.CurrentPathDisplayed = _fileExplorerDriveVM.CurrentPath;
         }
         catch (UnauthorizedAccessException)
@@ -121,7 +135,14 @@ public class FileExplorerDriveCommands
                 return;
             }
             _fileExplorerDriveVM.CurrentPath = currentDir;
-            _fileExplorerDriveVM.CurrentData.CurrentListBoxSource = new ObservableCollection<Element>(_fileExplorerDriveVM.CurrentData.AllItems.Where(item => item.Path == _fileExplorerDriveVM.CurrentPath && item.Extension == "Folder").ToList());
+            if (_fileExplorerDriveVM.Option == "Folder")
+            {
+                _fileExplorerDriveVM.CurrentData.CurrentListBoxSource = new ObservableCollection<Element>(_fileExplorerDriveVM.CurrentData.AllItems.Where(item => item.Path == _fileExplorerDriveVM.CurrentPath && item.Extension == "Folder").ToList());
+            }
+            else
+            {
+                _fileExplorerDriveVM.CurrentData.CurrentListBoxSource = new ObservableCollection<Element>(_fileExplorerDriveVM.CurrentData.AllItems.Where(item => item.Path == _fileExplorerDriveVM.CurrentPath).ToList());
+            }
             _fileExplorerDriveVM.CurrentPathDisplayed = _fileExplorerDriveVM.CurrentPath;
         }
         catch (UnauthorizedAccessException)
@@ -154,7 +175,7 @@ public class FileExplorerDriveCommands
         {
             if (clickedElement.Icon == "Folder")
             {
-                //_viewerPageVM.CurrentData.DriveOdLocal = false;
+                //_viewerPageVM.CurrentData.DriveOrLocal = false;
                 if (_fileExplorerDriveVM != null)
                 {
                     try
@@ -165,7 +186,14 @@ public class FileExplorerDriveCommands
                             _fileExplorerDriveVM.CurrentData.BackStack.Add(clickedElement.Path + "\\" + clickedElement.Name);
                             _fileExplorerDriveVM.CurrentPath = clickedElement.Path + "\\" + clickedElement.Name;
                             _fileExplorerDriveVM.PozInList++;
-                            _fileExplorerDriveVM.CurrentData.CurrentListBoxSource = new ObservableCollection<Element>(_fileExplorerDriveVM.CurrentData.AllItems.Where(item => item.Path == _fileExplorerDriveVM.CurrentPath && item.Extension == "Folder").ToList());
+                            if (_fileExplorerDriveVM.Option == "Folder")
+                            {
+                                _fileExplorerDriveVM.CurrentData.CurrentListBoxSource = new ObservableCollection<Element>(_fileExplorerDriveVM.CurrentData.AllItems.Where(item => item.Path == _fileExplorerDriveVM.CurrentPath && item.Extension == "Folder").ToList());
+                            }
+                            else
+                            {
+                                _fileExplorerDriveVM.CurrentData.CurrentListBoxSource = new ObservableCollection<Element>(_fileExplorerDriveVM.CurrentData.AllItems.Where(item => item.Path == _fileExplorerDriveVM.CurrentPath).ToList());
+                            }
                             _fileExplorerDriveVM.CurrentPathDisplayed = _fileExplorerDriveVM.CurrentPath;
                         }
                         else
@@ -176,7 +204,15 @@ public class FileExplorerDriveCommands
                             {
                                 _fileExplorerDriveVM.PozInList++;
                                 _fileExplorerDriveVM.CurrentPath = clickedElement.Path + "\\" + clickedElement.Name;
-                                _fileExplorerDriveVM.CurrentData.CurrentListBoxSource = new ObservableCollection<Element>(_fileExplorerDriveVM.CurrentData.AllItems.Where(item => item.Path == _fileExplorerDriveVM.CurrentPath && item.Extension == "Folder").ToList());
+                                if (_fileExplorerDriveVM.Option == "Folder")
+                                {
+                                    _fileExplorerDriveVM.CurrentData.CurrentListBoxSource = new ObservableCollection<Element>(_fileExplorerDriveVM.CurrentData.AllItems.Where(item => item.Path == _fileExplorerDriveVM.CurrentPath && item.Extension == "Folder").ToList());
+                                }
+                                else
+                                {
+                                    _fileExplorerDriveVM.CurrentData.CurrentListBoxSource = new ObservableCollection<Element>(_fileExplorerDriveVM.CurrentData.AllItems.Where(item => item.Path == _fileExplorerDriveVM.CurrentPath).ToList());
+
+                                }
                                 _fileExplorerDriveVM.CurrentPathDisplayed = _fileExplorerDriveVM.CurrentPath;
                             }
                             else
@@ -189,7 +225,14 @@ public class FileExplorerDriveCommands
                                 _fileExplorerDriveVM.CurrentData.BackStack.Add(clickedElement.Path + "\\" + clickedElement.Name);
                                 _fileExplorerDriveVM.PozInList++;
                                 _fileExplorerDriveVM.CurrentPath = clickedElement.Path + "\\" + clickedElement.Name;
-                                _fileExplorerDriveVM.CurrentData.CurrentListBoxSource = new ObservableCollection<Element>(_fileExplorerDriveVM.CurrentData.AllItems.Where(item => item.Path == _fileExplorerDriveVM.CurrentPath && item.Extension=="Folder").ToList());
+                                if (_fileExplorerDriveVM.Option == "Folder")
+                                {
+                                    _fileExplorerDriveVM.CurrentData.CurrentListBoxSource = new ObservableCollection<Element>(_fileExplorerDriveVM.CurrentData.AllItems.Where(item => item.Path == _fileExplorerDriveVM.CurrentPath && item.Extension == "Folder").ToList());
+                                }
+                                else
+                                {
+                                    _fileExplorerDriveVM.CurrentData.CurrentListBoxSource = new ObservableCollection<Element>(_fileExplorerDriveVM.CurrentData.AllItems.Where(item => item.Path == _fileExplorerDriveVM.CurrentPath).ToList());
+                                }
                                 _fileExplorerDriveVM.CurrentPathDisplayed = _fileExplorerDriveVM.CurrentPath;
                             }
 

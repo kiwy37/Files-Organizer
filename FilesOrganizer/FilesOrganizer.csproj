@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Images\AppLogo.png" />
+    <None Remove="Images\AppLogo.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,6 +32,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Accord.MachineLearning" Version="3.8.0" />
+    <PackageReference Include="Accord.Text" Version="3.8.0" />
     <PackageReference Include="AODL" Version="1.2.0.1" />
     <PackageReference Include="DiffPlex.Wpf" Version="1.4.0" />
     <PackageReference Include="DocumentFormat.OpenXml" Version="3.0.1" />
@@ -57,14 +59,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\AppLogo.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    <Folder Include="IntermediateSavings\" />
+    <Folder Include="DriveDownloads\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="IntermediateSavings\" />
-    <Folder Include="DriveDownloads\" />
+    <Resource Include="Images\AppLogo.ico" />
   </ItemGroup>
 
 </Project>

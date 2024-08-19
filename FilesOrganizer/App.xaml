@@ -3,20 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:FilesOrganizer"
              xmlns:viewModelCommands="clr-namespace:FilesOrganizer.ViewModels.Commands"
-             xmlns:view="clr-namespace:FilesOrganizer.Views">
+             StartupUri="Views/ViewerPage.xaml">
 
     <Application.Resources>
-        <ResourceDictionary>
-
-            <DataTemplate DataType="{x:Type TypeName=viewModelCommands:AddCategoryVM}">
-                <view:AddCategoryPage/>
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type TypeName=viewModelCommands:ViewerPageVM}">
-                <view:ViewerPage/>
-            </DataTemplate>
-
-        </ResourceDictionary>
 
     </Application.Resources>
 </Application> 

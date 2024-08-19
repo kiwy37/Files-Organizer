@@ -1,4 +1,6 @@
-﻿using FilesOrganizer.Views;
+﻿using FilesOrganizer.Commands;
+using FilesOrganizer.Helpers;
+using FilesOrganizer.Views;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
@@ -7,7 +9,7 @@ namespace FilesOrganizer.ViewModels.Commands
     public class SavesVM : INotifyPropertyChanged
     {
         private ObservableCollection<string> _saves;
-        private Commands _commands;
+        private ViewerPageCommands _commands;
         private string _selectedSave;
         private ViewerPageVM _viewerPageVM;
         private SavesWindow _savesWindow; 
@@ -31,13 +33,13 @@ namespace FilesOrganizer.ViewModels.Commands
                 OnPropertyChanged(nameof(ViewerPageVM));
             }
         }
-        public Commands Commands
+        public ViewerPageCommands Commands
         {
             get
             {
                 if (_commands == null)
                 {
-                    _commands = new Commands(this, _viewerPageVM);
+                    _commands = new ViewerPageCommands(this, _viewerPageVM);
                 }
                 return _commands;
             }
@@ -71,7 +73,7 @@ namespace FilesOrganizer.ViewModels.Commands
 
         public SavesVM(ViewerPageVM viewerPageVM)
         {
-            Saves = Helper.LoadSavesFromTextFile();
+            Saves = ViewerPageHelper.LoadSavesFromTextFile();
             ViewerPageVM = viewerPageVM;
         }
 

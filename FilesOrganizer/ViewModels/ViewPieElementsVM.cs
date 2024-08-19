@@ -1,4 +1,5 @@
-﻿using FilesOrganizer.Models;
+﻿using FilesOrganizer.Commands;
+using FilesOrganizer.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,10 +12,26 @@ namespace FilesOrganizer.ViewModels;
 
 public class ViewPieElementsVM : Core.ViewModel, INotifyPropertyChanged
 {
+    public bool DriveOrLocal { set; get; }
     private ObservableCollection<Element> _elements = new ObservableCollection<Element>();
     private Element _selectedItem;
-    public ViewPieElementsVM(List<Element> elements)
+    private ViewPieElementsCommands _commands;
+
+    public ViewPieElementsCommands Commands
     {
+        get
+        {
+            if (_commands == null)
+            {
+                _commands = new ViewPieElementsCommands(this);
+            }
+            return _commands;
+        }
+    }
+
+    public ViewPieElementsVM(bool driveOrLocal, List<Element> elements)
+    {
+        DriveOrLocal = driveOrLocal;
         Elements = new ObservableCollection<Element>(elements);
     }
 

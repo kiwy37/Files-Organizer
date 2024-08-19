@@ -11,12 +11,14 @@
         xmlns:convert="clr-namespace:FilesOrganizer.Core"
         xmlns:vm="clr-namespace:FilesOrganizer.ViewModels.Commands"
         xmlns:local="clr-namespace:FilesOrganizer.Views"
+        Background="#BDD0EA"
         mc:Ignorable="d"
-        Title="StatisticsWindow" Height="450" Width="800">
+        Title="StatisticsWindow" Height="450" Width="800" WindowState="Maximized">
 
     <Window.Resources>
         <convert:PercentageConverter x:Key="PercentageConverter"/>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <convert:SizeConverter x:Key="SizeConverter"/>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -44,9 +46,51 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20 0 0">
-                    <ToggleButton Content="By Number" IsChecked="{Binding IsCountChecked}" Width="100"/>
-                    <ToggleButton Content="By Size" IsChecked="{Binding IsSizeChecked}" Width="100"/>
+                    <ToggleButton Content="By Number" FontSize="22" IsChecked="{Binding IsCountChecked}" Width="250" Height="50">
+                        <ToggleButton.Template>
+                            <ControlTemplate TargetType="ToggleButton">
+                                <Border BorderThickness="1" CornerRadius="50,0,0,50" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </ToggleButton.Template>
+                        <ToggleButton.Style>
+                            <Style TargetType="ToggleButton">
+                                <Setter Property="Background" Value="CornflowerBlue"/>
+                                <Setter Property="Foreground" Value="Black"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsChecked" Value="True">
+                                        <Setter Property="Background" Value="RoyalBlue"/>
+                                        <Setter Property="Foreground" Value="White"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ToggleButton.Style>
+                    </ToggleButton>
+                    <ToggleButton Content="By Size" FontSize="22" IsChecked="{Binding IsSizeChecked}" Width="250" Height="50">
+                        <ToggleButton.Template>
+                            <ControlTemplate TargetType="ToggleButton">
+                                <Border BorderThickness="1" CornerRadius="0,50,50,0" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </ToggleButton.Template>
+                        <ToggleButton.Style>
+                            <Style TargetType="ToggleButton">
+                                <Setter Property="Background" Value="CornflowerBlue"/>
+                                <Setter Property="Foreground" Value="Black"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsChecked" Value="True">
+                                        <Setter Property="Background" Value="RoyalBlue"/>
+                                        <Setter Property="Foreground" Value="White"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ToggleButton.Style>
+                    </ToggleButton>
                 </StackPanel>
+
+
 
                 <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="30">
                     <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -58,45 +102,50 @@
                             </b:Interaction.Triggers>
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid HorizontalAlignment="Stretch">
+                                    <Grid HorizontalAlignment="Stretch" Margin="0 5 0 5">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <Rectangle Grid.Column="0" Width="20" Height="20" Fill="{Binding Fill}" Margin="0,0,5,0" />
-                                        <TextBlock Grid.Column="1" Text="{Binding Title}" />
-                                        <TextBlock Grid.Column="2" Text="{Binding Values[0]}" />
-                                        <TextBlock Grid.Column="3" Text=" bytes" Visibility="{Binding Path=DataContext.IsSizeChecked, RelativeSource={RelativeSource AncestorType=ListView}, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                                        <TextBlock Grid.Column="3" Text=" elements" Visibility="{Binding Path=DataContext.IsCountChecked, RelativeSource={RelativeSource AncestorType=ListView}, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                                        <TextBlock>
-                                            <TextBlock.Text>
-                                                <MultiBinding Converter="{StaticResource PercentageConverter}">
-                                                    <Binding Path="Values[0]" />
-                                                    <Binding Path="DataContext.TotalData" RelativeSource="{RelativeSource AncestorType=ListView}" />
-                                                </MultiBinding>
-                                            </TextBlock.Text>
+
+                                        <Border Grid.Column="0" Width="25" Height="25" BorderBrush="Black" BorderThickness="1" Margin="0,0,5,0" >
+                                            <Rectangle Width="25" Height="25" Fill="{Binding Fill}"/>
+                                        </Border>
+                                        <TextBlock Grid.Column="1" FontSize="16" Text="{Binding Title}" />
+                                        <!-- Display size with SizeConverter when IsSizeChecked is true, aligned to the right -->
+                                        <TextBlock Grid.Column="2" FontSize="16" 
+                       Text="{Binding Values[0], Converter={StaticResource SizeConverter}}" 
+                       Visibility="{Binding Path=DataContext.IsSizeChecked, RelativeSource={RelativeSource AncestorType=ListView}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       HorizontalAlignment="Right"/>
+                                        <!-- Display count directly when IsCountChecked is true, including the word 'elements', aligned to the right -->
+                                        <TextBlock Grid.Column="2" FontSize="16" 
+                       Visibility="{Binding Path=DataContext.IsCountChecked, RelativeSource={RelativeSource AncestorType=ListView}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       HorizontalAlignment="Right">
+                <Run Text="{Binding Values[0]}"/>
+                <Run Text=" elements"/>
                                         </TextBlock>
+                                        <TextBlock Grid.Column="3" Margin="0 0 30 0"/>
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
                     </ScrollViewer>
                 </Border>
-                
+
             </Grid>
         </Grid>
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="Top Last Accessed Files" Margin="10" />
+            <TextBlock FontSize="22" Grid.Column="0" Text="Top Last Accessed Files" HorizontalAlignment="Center"/>
             <xctk:IntegerUpDown Grid.Column="1" Value="{Binding IntegerUpDown}" Minimum="0" Maximum="100" Width="60"/>
-            <TextBlock Grid.Column="2" Text="Top Least Accessed Apps" Margin="10" />
+            <TextBlock FontSize="22" Grid.Column="2" Text="Top Least Accessed Apps" HorizontalAlignment="Center" />
         </Grid>
 
         <Grid Grid.Row="2">
@@ -106,6 +155,12 @@
             </Grid.ColumnDefinitions>
 
             <ListBox Grid.Column="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" ItemsSource="{Binding ElementsRecentAccessed}" Margin="15" SelectedItem="{Binding SelectedElement}">
+
+                <b:Interaction.Triggers>
+                    <b:EventTrigger EventName="MouseDoubleClick">
+                        <b:InvokeCommandAction Command="{Binding Path=Commands.OpenFileFromList}" CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBox}}}" />
+                    </b:EventTrigger>
+                </b:Interaction.Triggers>
 
                 <ListBox.ItemTemplate>
                     <DataTemplate DataType="model:Element">
@@ -132,6 +187,12 @@
             </ListBox>
 
             <ListBox Grid.Column="1" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" ItemsSource="{Binding ElementsLeastAccessed}" Margin="15" SelectedItem="{Binding SelectedElement}">
+
+                <b:Interaction.Triggers>
+                    <b:EventTrigger EventName="MouseDoubleClick">
+                        <b:InvokeCommandAction Command="{Binding Path=Commands.OpenFileFromList}" CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBox}}}" />
+                    </b:EventTrigger>
+                </b:Interaction.Triggers>
 
                 <ListBox.ItemTemplate>
                     <DataTemplate DataType="model:Element">

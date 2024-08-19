@@ -13,7 +13,7 @@ namespace FilesOrganizer.Models
         public string Path { get; set; }
         public string Icon { get; set; }
         public string _priority;
-        private ObservableCollection<Category> _category { get; set; }
+        private ObservableCollection<Category> _category;
         private string _language;
         public string _codeLanguage;
         public string _appearance;
@@ -59,6 +59,7 @@ namespace FilesOrganizer.Models
                 }
             }
         }
+
         public ObservableCollection<Category> Category
         {
             get { return _category; }

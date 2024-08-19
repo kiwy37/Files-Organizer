@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.ObjectModel;
+using System.Windows.Documents;
 using System.Windows.Media;
 
 namespace FilesOrganizer.Models;
@@ -8,9 +10,9 @@ public class Category : Core.ViewModel
     private string _categoryName;
     private string _name;
     private string _textColor;
-    private SolidColorBrush _col;
+    private SolidColorBrush _solidColorBrushColor;
 
-
+    private ObservableCollection<string> brightCols = new ObservableCollection<string> { "AliceBlue", "Azure", "Beige", "Cornsilk", "FloralWhite", "GhostWhite", "Honeydew", "Ivory", "Lavender", "LavenderBlush", "LightCyan", "LightGoldenrodYellow", "LightYellow", "Linen", "MintCream", "OldLace", "SeaShell", "Snow", "Transparent", "White", "WhiteSmoke" };
     public string CategoryName
     {
         get { return _categoryName; }
@@ -48,29 +50,34 @@ public class Category : Core.ViewModel
             }
         }
     }
-    public SolidColorBrush Col
+    public SolidColorBrush SolidColorBrushColor
     {
-        get { return _col; }
+        get { return _solidColorBrushColor; }
         set
         {
-            if (_col != value)
+            if (_solidColorBrushColor != value)
             {
-                _col = value;
-                OnPropertyChanged(nameof(Col));
+                _solidColorBrushColor = value;
+                OnPropertyChanged(nameof(SolidColorBrushColor));
             }
         }
     }
     public Category()
     {
         Name = "";
-        Col = new SolidColorBrush();
+        SolidColorBrushColor = new SolidColorBrush();
     }
 
     public Category(string categoryName, string name, SolidColorBrush col, string textColor)
     {
         CategoryName = categoryName;
         Name = name;
-        Col = col;
+        SolidColorBrushColor = col;
+
+        if(brightCols.Contains(textColor))
+        {
+            textColor = "Black";
+        }
         TextColor = textColor;
     }
 
@@ -83,12 +90,12 @@ public class Category : Core.ViewModel
         }
 
         Category other = (Category)obj;
-        return CategoryName == other.CategoryName && Name == other.Name && Col.Color == other.Col.Color && TextColor == other.TextColor;
+        return CategoryName == other.CategoryName && Name == other.Name && SolidColorBrushColor.Color == other.SolidColorBrushColor.Color && TextColor == other.TextColor;
     }
 
     public override int GetHashCode()
     {
-        return HashCode.Combine(CategoryName, Name, Col.Color, TextColor);
+        return HashCode.Combine(CategoryName, Name, SolidColorBrushColor.Color, TextColor);
     }
 
     public static bool operator ==(Category a, Category b)

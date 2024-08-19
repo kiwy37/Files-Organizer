@@ -1,0 +1,976 @@
+{
+  "DriveOrLocal": false,
+  "CurrentListBoxSource": [
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "1 appearance",
+      "Name": "Exam notes",
+      "Extension": ".docx",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\Texte similare",
+      "Icon": "FileWord",
+      "Status": 0,
+      "Id": null,
+      "Size": 45148,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "1 appearance",
+      "Color": "#FF00008B",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "28-Jun-24 11:32:10 AM"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "1 appearance",
+      "Name": "Exam notes",
+      "Extension": ".pdf",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\Texte similare",
+      "Icon": "FilePdfBox",
+      "Status": 0,
+      "Id": null,
+      "Size": 102854,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "1 appearance",
+      "Color": "#FFFF0000",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "28-Jun-24 11:32:10 AM"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "1 appearance",
+      "Name": "Schita prezentare",
+      "Extension": ".docx",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\Texte similare",
+      "Icon": "FileWord",
+      "Status": 0,
+      "Id": null,
+      "Size": 16027,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "1 appearance",
+      "Color": "#FF00008B",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "28-Jun-24 11:32:10 AM"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "1 appearance",
+      "Name": "noteconv",
+      "Extension": ".pdf",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo",
+      "Icon": "FilePdfBox",
+      "Status": 3,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "1 appearance",
+      "Color": "#FFFF0000",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    }
+  ],
+  "Categories": [
+    {
+      "CategoryName": "All Items",
+      "Name": "White",
+      "TextColor": null,
+      "SolidColorBrushColor": "#FFFFFFFF"
+    },
+    {
+      "CategoryName": "None",
+      "Name": "White",
+      "TextColor": null,
+      "SolidColorBrushColor": "#FFFFFFFF"
+    },
+    {
+      "CategoryName": "Code",
+      "Name": "DarkBlue",
+      "TextColor": "DarkBlue",
+      "SolidColorBrushColor": "#FF00008B"
+    }
+  ],
+  "CategoriesWithoutNone": [
+    {
+      "CategoryName": "Code",
+      "Name": "DarkBlue",
+      "TextColor": "DarkBlue",
+      "SolidColorBrushColor": "#FF00008B"
+    }
+  ],
+  "AllItems": [
+    {
+      "_priority": "None",
+      "_codeLanguage": "Java",
+      "_appearance": "0 appearance",
+      "Name": "Animal",
+      "Extension": ".java",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo",
+      "Icon": "File",
+      "Status": 0,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "Code",
+          "Name": "DarkBlue",
+          "TextColor": "DarkBlue",
+          "SolidColorBrushColor": "#FF00008B"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FF778899",
+      "Language": "None",
+      "CodeLanguage": "Java",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "Java",
+      "_appearance": "0 appearance",
+      "Name": "If Else If in Java",
+      "Extension": ".mp4",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo",
+      "Icon": "FileVideoOutline",
+      "Status": 0,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "Code",
+          "Name": "DarkBlue",
+          "TextColor": "DarkBlue",
+          "SolidColorBrushColor": "#FF00008B"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FF4169E1",
+      "Language": "English",
+      "CodeLanguage": "Java",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "Java",
+      "_appearance": "0 appearance",
+      "Name": "MainActivity",
+      "Extension": ".java",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo",
+      "Icon": "File",
+      "Status": 0,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "Code",
+          "Name": "DarkBlue",
+          "TextColor": "DarkBlue",
+          "SolidColorBrushColor": "#FF00008B"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FF778899",
+      "Language": "None",
+      "CodeLanguage": "Java",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "Poze",
+      "Extension": "Folder",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo",
+      "Icon": "Folder",
+      "Status": 0,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FF1E90FF",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "floare1",
+      "Extension": ".jpg",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\Poze",
+      "Icon": "ImageJpgBox",
+      "Status": 0,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FFFF0000",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "floare11",
+      "Extension": ".jpg",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\Poze",
+      "Icon": "ImageJpgBox",
+      "Status": 0,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FFFF0000",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "floare12",
+      "Extension": ".jpg",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\Poze",
+      "Icon": "ImageJpgBox",
+      "Status": 0,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FFFF0000",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "floare2",
+      "Extension": ".jpg",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\Poze",
+      "Icon": "ImageJpgBox",
+      "Status": 0,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FFFF0000",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "floare2_editat",
+      "Extension": ".jpg",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\Poze",
+      "Icon": "ImageJpgBox",
+      "Status": 0,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FFFF0000",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "floare3",
+      "Extension": ".jpg",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\Poze",
+      "Icon": "ImageJpgBox",
+      "Status": 0,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FFFF0000",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "frozen1",
+      "Extension": ".jpg",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\Poze",
+      "Icon": "ImageJpgBox",
+      "Status": 0,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FFFF0000",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "frozen_cropped",
+      "Extension": ".jpg",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\Poze",
+      "Icon": "ImageJpgBox",
+      "Status": 0,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FFFF0000",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "Texte similare",
+      "Extension": "Folder",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo",
+      "Icon": "Folder",
+      "Status": 0,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FF1E90FF",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "correct data",
+      "Extension": ".xml",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\Texte similare",
+      "Icon": "File",
+      "Status": 0,
+      "Id": null,
+      "Size": 8090,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FF778899",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "28-Jun-24 11:32:10 AM"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "desktop",
+      "Extension": ".ini",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\Texte similare",
+      "Icon": "File",
+      "Status": 0,
+      "Id": null,
+      "Size": 47,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FF778899",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "28-Jun-24 12:07:20 PM"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "1 appearance",
+      "Name": "Exam notes",
+      "Extension": ".docx",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\Texte similare",
+      "Icon": "FileWord",
+      "Status": 0,
+      "Id": null,
+      "Size": 45148,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "1 appearance",
+      "Color": "#FF00008B",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "28-Jun-24 11:32:10 AM"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "1 appearance",
+      "Name": "Exam notes",
+      "Extension": ".pdf",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\Texte similare",
+      "Icon": "FilePdfBox",
+      "Status": 0,
+      "Id": null,
+      "Size": 102854,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "1 appearance",
+      "Color": "#FFFF0000",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "28-Jun-24 11:32:10 AM"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "json sample",
+      "Extension": ".json",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\Texte similare",
+      "Icon": "File",
+      "Status": 0,
+      "Id": null,
+      "Size": 2713,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FF778899",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "28-Jun-24 11:28:06 AM"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "sample1",
+      "Extension": ".json",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\Texte similare",
+      "Icon": "File",
+      "Status": 0,
+      "Id": null,
+      "Size": 3753,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FF778899",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "28-Jun-24 11:28:06 AM"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "1 appearance",
+      "Name": "Schita prezentare",
+      "Extension": ".docx",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\Texte similare",
+      "Icon": "FileWord",
+      "Status": 0,
+      "Id": null,
+      "Size": 16027,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "1 appearance",
+      "Color": "#FF00008B",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "28-Jun-24 11:32:10 AM"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "testing data",
+      "Extension": ".xml",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\Texte similare",
+      "Icon": "File",
+      "Status": 0,
+      "Id": null,
+      "Size": 8101,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FF778899",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "28-Jun-24 11:32:10 AM"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "playlist",
+      "Extension": "Folder",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo",
+      "Icon": "Folder",
+      "Status": 3,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FF1E90FF",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "Carlos Vives, Shakira - La Bicicleta.mp3",
+      "Extension": ".mp3",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\playlist",
+      "Icon": "FileMusicOutline",
+      "Status": 3,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FF4169E1",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "Enrique Iglesias - SUBEME LA RADIO",
+      "Extension": ".wav",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\playlist",
+      "Icon": "FileMusicOutline",
+      "Status": 3,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FF4169E1",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "Shakira - Chantaje ft. Maluma",
+      "Extension": ".wav",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\playlist",
+      "Icon": "FileMusicOutline",
+      "Status": 3,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FF4169E1",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "c++",
+      "Extension": "Folder",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo",
+      "Icon": "Folder",
+      "Status": 3,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "Code",
+          "Name": "DarkBlue",
+          "TextColor": "DarkBlue",
+          "SolidColorBrushColor": "#FF00008B"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FF1E90FF",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "C++ tutorial",
+      "Extension": ".mp4",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\c++",
+      "Icon": "FileVideoOutline",
+      "Status": 3,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "Code",
+          "Name": "DarkBlue",
+          "TextColor": "DarkBlue",
+          "SolidColorBrushColor": "#FF00008B"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FF4169E1",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "Case in C++",
+      "Extension": ".jpg",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\c++",
+      "Icon": "ImageJpgBox",
+      "Status": 3,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "Code",
+          "Name": "DarkBlue",
+          "TextColor": "DarkBlue",
+          "SolidColorBrushColor": "#FF00008B"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FFFF0000",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "Piece",
+      "Extension": ".cpp",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\c++",
+      "Icon": "File",
+      "Status": 3,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "Code",
+          "Name": "DarkBlue",
+          "TextColor": "DarkBlue",
+          "SolidColorBrushColor": "#FF00008B"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FF778899",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "Source",
+      "Extension": ".cpp",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\c++",
+      "Icon": "File",
+      "Status": 3,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "Code",
+          "Name": "DarkBlue",
+          "TextColor": "DarkBlue",
+          "SolidColorBrushColor": "#FF00008B"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FF778899",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "0 appearance",
+      "Name": "Switch in C++",
+      "Extension": ".jpg",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo\\c++",
+      "Icon": "ImageJpgBox",
+      "Status": 3,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "Code",
+          "Name": "DarkBlue",
+          "TextColor": "DarkBlue",
+          "SolidColorBrushColor": "#FF00008B"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "0 appearance",
+      "Color": "#FFFF0000",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    },
+    {
+      "_priority": "None",
+      "_codeLanguage": "None",
+      "_appearance": "1 appearance",
+      "Name": "noteconv",
+      "Extension": ".pdf",
+      "Path": "C:\\Users\\Kiwy\\Desktop\\Demo",
+      "Icon": "FilePdfBox",
+      "Status": 3,
+      "Id": null,
+      "Size": 0,
+      "Category": [
+        {
+          "CategoryName": "None",
+          "Name": "White",
+          "TextColor": "Black",
+          "SolidColorBrushColor": "#FFFFFFFF"
+        }
+      ],
+      "Priority": "None",
+      "Appearance": "1 appearance",
+      "Color": "#FFFF0000",
+      "Language": "None",
+      "CodeLanguage": "None",
+      "LastAccessed": "Unknown"
+    }
+  ],
+  "BackStack": [
+    "C:\\Users\\Kiwy\\Desktop\\Demo",
+    "Filter results-False-All Items-All Items-#FFFFFFFF--"
+  ],
+  "SpacePath": "C:\\Users\\Kiwy\\Desktop\\Demo"
+}

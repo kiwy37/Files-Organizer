@@ -1,9 +1,11 @@
 ﻿using DiffPlex.WindowsForms.Controls;
 using DocumentFormat.OpenXml.Office2010.CustomUI;
 using DocumentFormat.OpenXml.Spreadsheet;
-using FilesOrganizer.Core;
+using FilesOrganizer.Commands;
+using FilesOrganizer.Helpers;
 using FilesOrganizer.Models;
 using ImageMagick;
+using iTextSharp.text.pdf;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,7 +27,7 @@ public class SimilarFilesVM: Core.ViewModel, INotifyPropertyChanged
     public readonly List<string> imageExtensions = new List<string> { ".avif", ".gif", ".heif", ".jpeg", ".jpg", ".png", ".raw", ".svg", ".tiff", ".heic" };
     private int _positionInList;
     private TransmittedData _currentData;
-    private Commands _commands;
+    private ViewerPageCommands _commands;
     private Element _selectedElement;
     private ObservableCollection<ObservableCollection<Element>> _similarElements;
     private IList _selectedItems;
@@ -35,41 +37,71 @@ public class SimilarFilesVM: Core.ViewModel, INotifyPropertyChanged
     private ImageSource _imageSource1 =null;
     private ImageSource _imageSource2 =null;
     private double _zoomLevel = 1;
-    private float _similarityThreshold = 0;
+    private float _similarityThreshold;
 
     public DiffViewer DiffView { get; set; }
 
-    public SimilarFilesVM(TransmittedData transmittedData, int similarityThreshold)
+    public SimilarFilesVM(TransmittedData transmittedData, int similarityThreshold, string similarCase)
     {
-        SimilarityThreshold = (float)(100-similarityThreshold)/100;
         _currentData = new TransmittedData(transmittedData);
-
-        //spargem in fisiere cu text si imagini
-        //var textFiles = new ObservableCollection<Element>(_currentData.AllItems.Where(x => plainTextFileExtensions.Contains(x.Extension)).ToList());
-        //var imageFiles = new ObservableCollection<Element>(_currentData.AllItems.Where(x => imageExtensions.Contains(x.Extension)).ToList());
-
-        //    var clusters = new ObservableCollection<ObservableCollection<Element>>(allItems
-        //.Where(item => item.Extension != "Folder")
-        //.Select(item => new ObservableCollection<Element> { item }));
-
-        var textFiles = new ObservableCollection<ObservableCollection<Element>>(_currentData.AllItems.Where(x => plainTextFileExtensions.Contains(x.Extension)).Select(x => new ObservableCollection<Element> { x }).ToList());
-        var imageFiles = new ObservableCollection<ObservableCollection<Element>>(_currentData.AllItems.Where(x => imageExtensions.Contains(x.Extension)).Select(x => new ObservableCollection<Element> { x }).ToList());
-
-        var resultText = HelperSimilarFiles.HierarchicalClustering(textFiles, SimilarityThreshold, false);          // 0 - identic     1 - different
-        var resultImages = HelperSimilarFiles.HierarchicalClustering(imageFiles, SimilarityThreshold, true);          // 0 - identic     1 - different
-
-        SimilarElements = new ObservableCollection<ObservableCollection<Element>>(resultText.Concat(resultImages));
-
-        if (SimilarElements.Count != 0)
+        if (similarCase == "SimilarFiles")
         {
-            CurrentData.CurrentListBoxSource = SimilarElements[0];
+            SimilarityThreshold = (float)(100 - similarityThreshold) / 100;
+
+            var textFiles = new ObservableCollection<Element>(_currentData.AllItems.Where(x => plainTextFileExtensions.Contains(x.Extension)).ToList());
+
+            var clustering = HelperSimilarFiles.ClusterDocuments(transmittedData.DriveOrLocal, SimilarityThreshold, textFiles);
+
+            if (clustering.Count > 0)
+            {
+                SimilarElements = new ObservableCollection<ObservableCollection<Element>>(clustering);
+            }
+            else
+            {
+                SimilarElements = new ObservableCollection<ObservableCollection<Element>>();
+            }
         }
-        else
+        if (similarCase == "EditedPhotos")
         {
-            CurrentData.CurrentListBoxSource = null;
+            var imageFiles = new ObservableCollection<Element>(_currentData.AllItems.Where(x => imageExtensions.Contains(x.Extension)).ToList());
+
+            SimilarityThreshold = (float)similarityThreshold / 100;
+
+            // Group the images based on the SSIM
+            var clusteredImages = HelperSimilarFiles.ClusterPhotosSSIM(SimilarityThreshold, 1, imageFiles);
+
+
+            if (clusteredImages.Count > 0)
+            {
+                SimilarElements = new ObservableCollection<ObservableCollection<Element>>(clusteredImages);
+            }
+            else
+            {
+                SimilarElements = new ObservableCollection<ObservableCollection<Element>>();
+            }
         }
-        PositionInList = 0;
-        //HelperSimilarFiles.ShowSimilarElements(SimilarElements);
+        if (similarCase == "CroppedPhotos")
+        {
+            var imageFiles = new ObservableCollection<Element>(_currentData.AllItems.Where(x => imageExtensions.Contains(x.Extension)).ToList());
+
+            SimilarityThreshold = (float)similarityThreshold / 100;
+
+            // Group the images based on the SSIM
+            var clusteredImages = HelperSimilarFiles.ClusterPhotosCropped(SimilarityThreshold, imageFiles);
+
+            // Assign the clustered images to SimilarElements
+            //SimilarElements = clusteredImages;
+
+
+            if (clusteredImages.Count > 0)
+            {
+                SimilarElements = new ObservableCollection<ObservableCollection<Element>>(clusteredImages);
+            }
+            else
+            {
+                SimilarElements = new ObservableCollection<ObservableCollection<Element>>();
+            }
+        }
     }
     public float SimilarityThreshold
     {
@@ -208,13 +240,13 @@ public class SimilarFilesVM: Core.ViewModel, INotifyPropertyChanged
             OnPropertyChanged(nameof(CurrentData));
         }
     }
-    public Commands Commands
+    public ViewerPageCommands Commands
     {
         get
         {
             if (_commands == null)
             {
-                _commands = new Commands(this);
+                _commands = new ViewerPageCommands(this);
             }
             return _commands;
         }

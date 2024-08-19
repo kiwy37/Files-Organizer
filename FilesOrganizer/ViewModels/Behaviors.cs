@@ -43,7 +43,9 @@ public class SaveOnCloseBehavior : Behavior<Window>
                     viewModel.SettingsDatas.TextFilesCode.ToString() + "\n" +
                     viewModel.SettingsDatas.TextFilesLanguage.ToString() + "\n" +
                     viewModel.SettingsDatas.AudiosLanguage.ToString() + "\n" +
-                    viewModel.SettingsDatas.SimilarityThreshold.ToString() + "\n"
+                    viewModel.SettingsDatas.DistanceBetweenClusters.ToString() + "\n" +
+                    viewModel.SettingsDatas.MinValueSSIM.ToString() + "\n" +
+                    viewModel.SettingsDatas.MinValueArea.ToString() + "\n"
                     );
             }
         }

@@ -1,4 +1,5 @@
-﻿using FilesOrganizer.Core;
+﻿using FilesOrganizer.Commands;
+using FilesOrganizer.Core;
 using FilesOrganizer.Models;
 using System.ComponentModel;
 
@@ -8,7 +9,7 @@ public class SettingsVM : Core.ViewModel, INotifyPropertyChanged
 {
     private TransmittedData _datas;
     private Settings _settingsDatas;
-    private Commands _commands;
+    private SettingsCommands _commands;
     public ViewerPageVM _mainViewModel;
 
     public SettingsVM(ViewerPageVM mainViewModel)
@@ -45,13 +46,13 @@ public class SettingsVM : Core.ViewModel, INotifyPropertyChanged
             OnPropertyChanged(nameof(SettingsDatas));
         }
     }
-    public Commands Commands
+    public SettingsCommands Commands
     {
         get
         {
             if (_commands == null)
             {
-                _commands = new Commands(this);
+                _commands = new SettingsCommands(this);
             }
             return _commands;
         }

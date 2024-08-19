@@ -23,6 +23,12 @@
         
         <ListBox Grid.Row="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Elements}" Margin="15" SelectedItem="{Binding SelectedItem}">
 
+            <b:Interaction.Triggers>
+                <b:EventTrigger EventName="MouseDoubleClick">
+                    <b:InvokeCommandAction Command="{Binding Path=Commands.Open}" CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBox}}}" />
+                </b:EventTrigger>
+            </b:Interaction.Triggers>
+            
             <ListBox.ItemTemplate>
                 <DataTemplate DataType="model:Element">
                     <Grid>

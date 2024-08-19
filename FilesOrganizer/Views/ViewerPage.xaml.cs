@@ -1,4 +1,5 @@
 ﻿using FilesOrganizer.ViewModels;
+using FilesOrganizer.ViewModels.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,11 +20,12 @@ namespace FilesOrganizer.Views
     /// <summary>
     /// Interaction logic for ViewerPage.xaml
     /// </summary>
-    public partial class ViewerPage : UserControl
+    public partial class ViewerPage : Window
     {
         public ViewerPage()
         {
             InitializeComponent();
+            DataContext = new ViewerPageVM();
         }
     }
 }

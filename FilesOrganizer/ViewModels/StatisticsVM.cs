@@ -5,11 +5,11 @@ using System.IO;
 using System.Windows.Input;
 using System.Windows;
 using FilesOrganizer.Models;
-using FilesOrganizer.ViewModels.Commands;
 using LiveCharts;
 using LiveCharts.Wpf;
 using System.Linq;
 using System;
+using FilesOrganizer.Commands;
 
 namespace FilesOrganizer.ViewModels.Commands;
 
@@ -22,9 +22,10 @@ public class StatisticsVM : Core.ViewModel, INotifyPropertyChanged
     private Element _selectedElement;
     private int _integerUpDown;
     public Dictionary<string, List<Element>> FileExtension { get; set; }
-    private Commands _commands;
+    private ViewerPageCommands _commands;
     private bool _isCountChecked;
     private bool _isSizeChecked;
+    public bool DriveOrLocal { set; get; }
     public long TotalData
     {
         get
@@ -42,7 +43,7 @@ public class StatisticsVM : Core.ViewModel, INotifyPropertyChanged
 
 
 
-    public StatisticsVM(Element selectedItem, ObservableCollection<Element> allElements)
+    public StatisticsVM(bool driveOrLocal, Element selectedItem, ObservableCollection<Element> allElements)
     {
         var path = selectedItem.Path + "\\" + selectedItem.Name;
         AllElements = new ObservableCollection<Element>(allElements.Where(e => e.Path.StartsWith(path)));
@@ -60,6 +61,8 @@ public class StatisticsVM : Core.ViewModel, INotifyPropertyChanged
                     StrokeThickness = 0.5 // Change this value to adjust the thickness
                 });
         }
+        DriveOrLocal = driveOrLocal;
+        if (!DriveOrLocal)
         LastAccessedTime();
         IntegerUpDown = 3;
         _isSizeChecked = false;
@@ -154,13 +157,22 @@ public class StatisticsVM : Core.ViewModel, INotifyPropertyChanged
         get { return _integerUpDown; }
         set
         {
-            if (_integerUpDown != value)
+            // Calculate the maximum allowed value for IntegerUpDown
+            int maxAllowedValue = CalculateValidElementsCount();
+            int newValue = Math.Min(value, maxAllowedValue);
+
+            if (_integerUpDown != newValue)
             {
-                _integerUpDown = value;
+                _integerUpDown = newValue;
                 TakeFirstElements();
                 OnPropertyChanged(nameof(IntegerUpDown));
             }
         }
+    }
+
+    private int CalculateValidElementsCount()
+    {
+        return AllElements.Count(e => e.LastAccessed != "Unknown");
     }
 
     public Element SelectedElement
@@ -271,7 +283,7 @@ public class StatisticsVM : Core.ViewModel, INotifyPropertyChanged
         {
             if (element.Path.StartsWith(root) && element.Extension != "Folder")
             {
-                var extension = element.Extension;
+                var extension = string.IsNullOrEmpty(element.Extension) ? "No extension" : element.Extension;
 
                 if (result.ContainsKey(extension))
                 {
@@ -287,13 +299,14 @@ public class StatisticsVM : Core.ViewModel, INotifyPropertyChanged
         return result;
     }
 
-    public Commands Commands
+
+    public ViewerPageCommands Commands
     {
         get
         {
             if (_commands == null)
             {
-                _commands = new Commands(this);
+                _commands = new ViewerPageCommands(this);
             }
             return _commands;
         }

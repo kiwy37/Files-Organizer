@@ -27,13 +27,34 @@ namespace FilesOrganizer.Views
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             var viewModel = this.DataContext as FileExplorerDriveVM;
-            if (viewModel != null && viewModel.SelectedItem == null)
+            if (viewModel.Option == "Folder")
             {
-                MessageBox.Show("Please select an item before closing the window.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                if (viewModel != null && viewModel.SelectedItem == null)
+                {
+                    viewModel.SelectedPath = viewModel.CurrentPathDisplayed;
+                    Close();
+                }
+                else
+                {
+                    viewModel.SelectedPath = viewModel.SelectedItem.Path + "\\" + viewModel.SelectedItem.Name;
+                    Close();
+                }
             }
             else
             {
-                Close();
+                if (viewModel != null && viewModel.SelectedItem == null)
+                {
+                    MessageBox.Show("Please select a file.");
+                }
+                else if (viewModel.SelectedItem.Extension == "Folder")
+                {
+                    MessageBox.Show("Please select a file.");
+                }
+                else
+                {
+                    viewModel.SelectedItem = viewModel.SelectedItem;
+                    Close();
+                }
             }
         }
     }

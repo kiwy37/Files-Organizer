@@ -11,7 +11,9 @@
         xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
         Background="CornflowerBlue"
         mc:Ignorable="d"
-        Title="SimilarFilesWindow" Height="450" Width="800">
+        Title="SimilarFilesWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
         <Style x:Key="RoundCornerButton" TargetType="Button">
@@ -104,11 +106,11 @@
                     </ContextMenu>
                 </ListBox.ContextMenu>
 
-                <b:Interaction.Triggers>
+                <!--<b:Interaction.Triggers>
                     <b:EventTrigger EventName="MouseDoubleClick">
                         <b:InvokeCommandAction Command="{Binding Path=Commands.NavigateOpenFolderInCreateFolderCommand}" CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBox}}}" />
                     </b:EventTrigger>
-                </b:Interaction.Triggers>
+                </b:Interaction.Triggers>-->
 
                 <ListBox.ItemTemplate>
                     <DataTemplate DataType="model:Element">
@@ -126,9 +128,9 @@
                                 <TextBlock Text="{Binding Extension}" FontSize="14" Margin="2"/>
                             </StackPanel>
 
-                            <StackPanel Grid.Column="2" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 40 0">
+                            <!--<StackPanel Grid.Column="2" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 40 0">
                                 <TextBlock Text="{Binding Appearance}" FontSize="14"/>
-                            </StackPanel>
+                            </StackPanel>-->
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

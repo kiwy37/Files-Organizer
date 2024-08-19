@@ -1,4 +1,5 @@
-﻿using FilesOrganizer.Core;
+﻿using FilesOrganizer.Commands;
+using FilesOrganizer.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace FilesOrganizer.ViewModels.Commands;
 
 public class LocalOrDriverVM
 {
-    private Commands _commands;
+    private ViewerPageCommands _commands;
     public string ButtonClicked { get; set; }
     public ICommand LocalButtonCommand { get; set; }
     public ICommand DriveButtonCommand { get; set; }
@@ -22,13 +23,13 @@ public class LocalOrDriverVM
         DriveButtonCommand = new RelayCommand(o => { ButtonClicked = "Drive"; CloseAction?.Invoke(); });
     }
 
-    public Commands Commands
+    public ViewerPageCommands Commands
     {
         get
         {
             if (_commands == null)
             {
-                _commands = new Commands(this);
+                _commands = new ViewerPageCommands(this);
             }
             return _commands;
         }

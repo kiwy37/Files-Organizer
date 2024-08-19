@@ -1,10 +1,11 @@
 ﻿using FilesOrganizer.Commands;
 using FilesOrganizer.Core;
+using FilesOrganizer.Helpers;
 using FilesOrganizer.Models;
-using FilesOrganizer.Services;
 using Google.Apis.Drive.v3;
 using NPOI.OpenXmlFormats.Dml.Diagram;
 using System;
+using System.Collections;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace FilesOrganizer.ViewModels.Commands;
 
 public class ViewerPageVM : Core.ViewModel, INotifyPropertyChanged
 {
+    private IList _selectedItems = new ObservableCollection<object>();
     private Settings _settingsDatas;
     TransmittedData _currentData = new TransmittedData();
     private ObservableCollection<string> _priorityList = new ObservableCollection<string>() { "All Items", "None", "High", "Medium", "Low" };
@@ -31,14 +33,13 @@ public class ViewerPageVM : Core.ViewModel, INotifyPropertyChanged
     };
     private ObservableCollection<string> _codeLanguages = new ObservableCollection<string>()
     {
-        "All Items", "None", "C#", "C++", "CSS", "HTML", "Java", "Python", "TypeScript"
+        "All Items", "None", "C", "C#", "C++", "HTML", "Java", "Python", 
     };
-    private Commands _commands;
-    private INavigationService _navigation;
-    public ObservableCollection<Category> ColorList { get; set; }
+    private ViewerPageCommands _commands;
+    public ObservableCollection<Category> ColorsAvailable { get; set; }
     private Category _definedCategory;
     private string _categoryName;
-    private Category _selectedCategory; // = new Category { Name = "White", Col = Brushes.White, CategoryName = "All Items", TextColor="Black" };
+    private Category _selectedCategory; // = new Category { Name = "White", SolidColorBrushColor = Brushes.White, CategoryName = "All Items", TextColor="Black" };
     private string _selectedPriority; // = "All Items";
     private string _selectedLanguage; // = "All Items";
     private string _selectedCodeLanguage; // = "All Items";
@@ -53,12 +54,31 @@ public class ViewerPageVM : Core.ViewModel, INotifyPropertyChanged
     private string _currentPathDisplayed;
     private string _savingConversionPath;
     private Element _selectedItem;
+    private Category _selectedItemCategory;
     private ObservableCollection<MyCheckbox> _conversionOptions;
     private string _searchingWord;
     private bool _isByNameChecked;
     private bool _isByContentChecked;
     private bool _searchApplied = false;
-    private DriveService _service;
+
+    public IList SelectedItems
+    {
+        get { return _selectedItems; }
+        set
+        {
+            _selectedItems = value;
+            OnPropertyChanged(nameof(SelectedItems));
+        }
+    }
+
+    public bool IsLastCategory(Category category)
+    {
+        if (CurrentData.CategoriesWithoutNone.Any())
+        {
+            return CurrentData.CategoriesWithoutNone.Last() == category;
+        }
+        return false;
+    }
     public bool IsSelectedFolder
     {
         get
@@ -67,15 +87,6 @@ public class ViewerPageVM : Core.ViewModel, INotifyPropertyChanged
         }
     }
 
-    public DriveService Service
-    {
-        get => _service;
-        set
-        {
-            _service = value;
-            OnPropertyChanged(nameof(Service));
-        }
-    }
     public Settings SettingsDatas
     {
         get => _settingsDatas;
@@ -144,6 +155,19 @@ public class ViewerPageVM : Core.ViewModel, INotifyPropertyChanged
         }
     }
 
+    public Category SelectedItemCategory
+    {
+        get { return _selectedItemCategory; }
+        set
+        {
+            if (_selectedItemCategory != value)
+            {
+                _selectedItemCategory = value;
+                OnPropertyChanged(nameof(SelectedItemCategory));
+            }
+        }
+    }
+
     public Element SelectedItem
     {
         get { return _selectedItem; }
@@ -181,6 +205,10 @@ public class ViewerPageVM : Core.ViewModel, INotifyPropertyChanged
 
                     conversionOptions.Remove(conversionOptions.FirstOrDefault(item => item.Content == extension));
                     ConversionOptions = conversionOptions;
+                }
+                else
+                {
+                    ConversionOptions = new ObservableCollection<MyCheckbox>();
                 }
                 OnPropertyChanged(nameof(ConversionOptions));
                 OnPropertyChanged(nameof(SelectedItem));
@@ -446,22 +474,23 @@ public class ViewerPageVM : Core.ViewModel, INotifyPropertyChanged
         {
             if (gridName == "ConverterSpace")
             {
-                IsGridVisible = new Tuple<bool, bool, bool, bool>(!IsGridVisible.Item1, IsGridVisible.Item2, IsGridVisible.Item3, IsGridVisible.Item4);
+                IsGridVisible = new Tuple<bool, bool, bool, bool>(!IsGridVisible.Item1, false, false, false);
             }
-            if (gridName == "CategorySpace")
+            else if (gridName == "CategorySpace")
             {
-                IsGridVisible = new Tuple<bool, bool, bool, bool>(IsGridVisible.Item1, !IsGridVisible.Item2, IsGridVisible.Item3, IsGridVisible.Item4);
+                IsGridVisible = new Tuple<bool, bool, bool, bool>(false, !IsGridVisible.Item2, false, false);
             }
-            if (gridName == "FilterSpace")
+            else if (gridName == "FilterSpace")
             {
-                IsGridVisible = new Tuple<bool, bool, bool, bool>(IsGridVisible.Item1, IsGridVisible.Item2, !IsGridVisible.Item3, IsGridVisible.Item4);
+                IsGridVisible = new Tuple<bool, bool, bool, bool>(false, false, !IsGridVisible.Item3, false);
             }
             else if (gridName == "LanguageSpace")
             {
-                IsGridVisible = new Tuple<bool, bool, bool, bool>(IsGridVisible.Item1, IsGridVisible.Item2, IsGridVisible.Item3, !IsGridVisible.Item4);
+                IsGridVisible = new Tuple<bool, bool, bool, bool>(false, false, false, !IsGridVisible.Item4);
             }
         }
     }
+
 
     #endregion
 
@@ -565,38 +594,22 @@ public class ViewerPageVM : Core.ViewModel, INotifyPropertyChanged
         }
     }
 
-    public INavigationService Navigation
-    {
-        get => _navigation;
-        set
-        {
-            _navigation = value;
-            OnPropertyChanged();
-        }
-    }
     public void UpdateData(TransmittedData data)
     {
         CurrentData = data;
     }
     public RelayCommand NavigateToAddCategoryPageCommand { get; set; }
-    public ViewerPageVM(INavigationService navigation)
+    public ViewerPageVM()
     {
-        Navigation = navigation;
-
-        NavigateToAddCategoryPageCommand = new RelayCommand(
-            execute: o => { Navigation.NavigateTo<AddCategoryVM>(CurrentData); },
-            canExecute: o => true
-        );
-
-        if (CurrentData.IsFilteredItemsListBoxVisible)
-        {
-            CurrentData.CurrentListBoxSource = CurrentData.CurrentListBoxSource;
-        }
-        else
-        {
-            CurrentData.CurrentListBoxSource = CurrentData.CurrentListBoxSource;
-        }
-        ColorList = new ObservableCollection<Category>();
+        //if (CurrentData.IsFilteredItemsListBoxVisible)
+        //{
+        //    CurrentData.CurrentListBoxSource = CurrentData.CurrentListBoxSource;
+        //}
+        //else
+        //{
+        //    CurrentData.CurrentListBoxSource = CurrentData.CurrentListBoxSource;
+        //}
+        ColorsAvailable = new ObservableCollection<Category>();
 
         foreach (var property in typeof(Brushes).GetProperties())
         {
@@ -605,27 +618,27 @@ public class ViewerPageVM : Core.ViewModel, INotifyPropertyChanged
                 SolidColorBrush colorBrush = (SolidColorBrush)property.GetValue(null, null);
                 string colorName = property.Name;
 
-                ColorList.Add(new Category { Name = colorName, Col = colorBrush });
+                ColorsAvailable.Add(new Category { Name = colorName, SolidColorBrushColor = colorBrush });
             }
         }
         DefinedCategory = new Category();
-        SettingsDatas = new Settings(Helper.TakeInfosForSettings(this));
-        CurrentData.Categories.Add(new Category { Name = "White", Col = Brushes.White, CategoryName = "All Items" });
-        CurrentData.Categories.Add(new Category { Name = "White", Col = Brushes.White, CategoryName = "None" });
+        SettingsDatas = new Settings(ViewerPageHelper.TakeInfosForSettings(this));
+        CurrentData.Categories.Add(new Category { Name = "White", SolidColorBrushColor = Brushes.White, CategoryName = "All Items" });
+        CurrentData.Categories.Add(new Category { Name = "White", SolidColorBrushColor = Brushes.White, CategoryName = "None" });
     }
-    public Commands Commands
+    public ViewerPageCommands Commands
     {
         get
         {
             if (_commands == null)
             {
-                _commands = new Commands(this);
+                _commands = new ViewerPageCommands(this);
             }
             return _commands;
         }
     }
     public event PropertyChangedEventHandler PropertyChanged;
-    protected virtual void OnPropertyChanged(string propertyName)
+    public virtual void OnPropertyChanged(string propertyName)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }

@@ -17,7 +17,9 @@ public class Settings : Core.ViewModel, INotifyPropertyChanged
     private bool? _imagesLanguage = true;
     private bool? _videosLanguage = true;
     private bool? _filterType = false;
-    private int _similarityThreshold = 0;
+    private int _distanceBetweenClusters = 0;
+    private int _minValueSSIM = 0;
+    private int _minValueArea = 0;
 
     public Settings()
     {
@@ -29,9 +31,11 @@ public class Settings : Core.ViewModel, INotifyPropertyChanged
         TextFilesCode = false;
         TextFilesLanguage = false;
         AudiosLanguage = false;
-        SimilarityThreshold = 0;
+        DistanceBetweenClusters = 0;
+        MinValueSSIM = 0;
+        MinValueArea = 0;
     }
-    public Settings(List<bool> settings, int similarityThreshold)
+    public Settings(List<bool> settings, int distanceBetweenClusters, int minValueSSIM, int minValueArea)
     {
         ImagesCode = settings[0];
         VideosCode = settings[1];
@@ -41,7 +45,9 @@ public class Settings : Core.ViewModel, INotifyPropertyChanged
         TextFilesCode = settings[5];
         TextFilesLanguage = settings[6];
         AudiosLanguage = settings[7];
-        SimilarityThreshold = similarityThreshold;
+        DistanceBetweenClusters = distanceBetweenClusters;
+        MinValueSSIM = minValueSSIM;
+        MinValueArea = minValueArea;
     }
     public Settings(Settings settings)
     {
@@ -53,30 +59,46 @@ public class Settings : Core.ViewModel, INotifyPropertyChanged
         TextFilesCode = settings.TextFilesCode;
         TextFilesLanguage = settings.TextFilesLanguage;
         AudiosLanguage = settings.AudiosLanguage;
-        SimilarityThreshold = settings.SimilarityThreshold;
+        DistanceBetweenClusters = settings.DistanceBetweenClusters;
+        MinValueSSIM = settings.MinValueSSIM;
+        MinValueArea = settings.MinValueArea;
     }
-    //public Settings(Tuple<bool, bool, bool, bool, bool, bool, bool, bool> tuple)
-    //{
-    //    ImagesCode = tuple.Item1;
-    //    VideosCode = tuple.Item2;
-    //    ImagesLanguage = tuple.Item3;
-    //    VideosLanguage = tuple.Item4;
-    //    FilterType = tuple.Item5;
 
-    //    TextFilesCode = tuple.Item6;
-    //    TextFilesLanguage = tuple.Item7;
-    //    AudiosLanguage = tuple.Rest;
-    //}
-    
-    public int SimilarityThreshold
+    public int MinValueSSIM
     {
-        get { return _similarityThreshold; }
+        get { return _minValueSSIM; }
         set
         {
-            if (_similarityThreshold != value)
+            if (_minValueSSIM != value)
             {
-                _similarityThreshold = value;
-                OnPropertyChanged(nameof(SimilarityThreshold));
+                _minValueSSIM = value;
+                OnPropertyChanged(nameof(MinValueSSIM));
+            }
+        }
+    }
+
+    public int MinValueArea
+    {
+        get { return _minValueArea; }
+        set
+        {
+            if (_minValueArea != value)
+            {
+                _minValueArea = value;
+                OnPropertyChanged(nameof(MinValueArea));
+            }
+        }
+    }
+    
+    public int DistanceBetweenClusters
+    {
+        get { return _distanceBetweenClusters; }
+        set
+        {
+            if (_distanceBetweenClusters != value)
+            {
+                _distanceBetweenClusters = value;
+                OnPropertyChanged(nameof(DistanceBetweenClusters));
             }
         }
     }

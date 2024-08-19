@@ -7,60 +7,53 @@ namespace FilesOrganizer.Models;
 
 public class TransmittedData: INotifyPropertyChanged
 {
-    //private ObservableCollection<Element> _items = new ObservableCollection<Element>();
     private ObservableCollection<Element> _allItems = new ObservableCollection<Element>();
     private ObservableCollection<Category> _categories = new ObservableCollection<Category>();
-    //private ObservableCollection<Element> _filteredItems;
     private List<string> _backStack = new List<string>();
-    private string _spacePath;
-    private bool _isItemsListBoxVisible;
-    private bool _isFilteredItemsListBoxVisible;
     private ObservableCollection<Element> _currentListBoxSource;
-    private ObservableCollection<Element> _searchResults;
-    private ObservableCollection<Element> _filtersResults;
-    private bool _driveOdLocal = false;
-    //private TransmittedData currentData;
+    private bool _driveOrLocal = false;
+    private string _spacePath;
 
 
     #region Properties
 
-    public bool DriveOdLocal
+    public bool DriveOrLocal
     {
-        get { return _driveOdLocal; }
+        get { return _driveOrLocal; }
         set
         {
-            if (_driveOdLocal != value)
+            if (_driveOrLocal != value)
             {
-                _driveOdLocal = value;
-                OnPropertyChanged(nameof(DriveOdLocal));
+                _driveOrLocal = value;
+                OnPropertyChanged(nameof(DriveOrLocal));
             }
         }
     }
 
-    public ObservableCollection<Element> FiltersResults
-    {
-        get { return _filtersResults; }
-        set
-        {
-            if (_filtersResults != value)
-            {
-                _filtersResults = value;
-                OnPropertyChanged(nameof(FiltersResults));
-            }
-        }
-    }
-    public ObservableCollection<Element> SearchResults
-    {
-        get { return _searchResults; }
-        set
-        {
-            if (_searchResults != value)
-            {
-                _searchResults = value;
-                OnPropertyChanged(nameof(SearchResults));
-            }
-        }
-    }
+    //public ObservableCollection<Element> FiltersResults
+    //{
+    //    get { return _filtersResults; }
+    //    set
+    //    {
+    //        if (_filtersResults != value)
+    //        {
+    //            _filtersResults = value;
+    //            OnPropertyChanged(nameof(FiltersResults));
+    //        }
+    //    }
+    //}
+    //public ObservableCollection<Element> SearchResults
+    //{
+    //    get { return _searchResults; }
+    //    set
+    //    {
+    //        if (_searchResults != value)
+    //        {
+    //            _searchResults = value;
+    //            OnPropertyChanged(nameof(SearchResults));
+    //        }
+    //    }
+    //}
     public ObservableCollection<Element> CurrentListBoxSource
     {
         get { return _currentListBoxSource; }
@@ -73,35 +66,35 @@ public class TransmittedData: INotifyPropertyChanged
             }
         }
     }
-    public bool IsItemsListBoxVisible
-    {
-        get { return _isItemsListBoxVisible; }
-        set
-        {
-            if (_isItemsListBoxVisible != value)
-            {
-                _isItemsListBoxVisible = value;
-                OnPropertyChanged(nameof(IsItemsListBoxVisible));
+    //public bool IsItemsListBoxVisible
+    //{
+    //    get { return _isItemsListBoxVisible; }
+    //    set
+    //    {
+    //        if (_isItemsListBoxVisible != value)
+    //        {
+    //            _isItemsListBoxVisible = value;
+    //            OnPropertyChanged(nameof(IsItemsListBoxVisible));
 
-                IsFilteredItemsListBoxVisible = !value;
-            }
-        }
-    }
+    //            IsFilteredItemsListBoxVisible = !value;
+    //        }
+    //    }
+    //}
 
-    public bool IsFilteredItemsListBoxVisible
-    {
-        get { return _isFilteredItemsListBoxVisible; }
-        set
-        {
-            if (_isFilteredItemsListBoxVisible != value)
-            {
-                _isFilteredItemsListBoxVisible = value;
-                OnPropertyChanged(nameof(IsFilteredItemsListBoxVisible));
+    //public bool IsFilteredItemsListBoxVisible
+    //{
+    //    get { return _isFilteredItemsListBoxVisible; }
+    //    set
+    //    {
+    //        if (_isFilteredItemsListBoxVisible != value)
+    //        {
+    //            _isFilteredItemsListBoxVisible = value;
+    //            OnPropertyChanged(nameof(IsFilteredItemsListBoxVisible));
 
-                IsItemsListBoxVisible = !value;
-            }
-        }
-    }
+    //            //IsItemsListBoxVisible = !value;
+    //        }
+    //    }
+    //}
 
     //public ObservableCollection<Element> FilteredItems
     //{
@@ -206,24 +199,21 @@ public class TransmittedData: INotifyPropertyChanged
         //FilteredItems = filteredItems;
         BackStack = backStack;
         SpacePath = spacePath;
-        IsItemsListBoxVisible = isItemsListBoxVisible;
-        IsFilteredItemsListBoxVisible = isFilteredItemsListBoxVisible;
+        //IsItemsListBoxVisible = isItemsListBoxVisible;
+        //IsFilteredItemsListBoxVisible = isFilteredItemsListBoxVisible;
         CurrentListBoxSource = currentListBoxSource;
     }
 
     public TransmittedData(TransmittedData currentData)
     {
+        this.DriveOrLocal = currentData.DriveOrLocal;
         this.AllItems = new ObservableCollection<Element>(currentData.AllItems);
         this.Categories = new ObservableCollection<Category>(currentData.Categories);
         this.BackStack = new List<string>(currentData.BackStack);
         this.SpacePath = currentData.SpacePath;
-        this.IsItemsListBoxVisible = currentData.IsItemsListBoxVisible;
-        this.IsFilteredItemsListBoxVisible = currentData.IsFilteredItemsListBoxVisible;
+        //this.IsItemsListBoxVisible = currentData.IsItemsListBoxVisible;
+        //this.IsFilteredItemsListBoxVisible = currentData.IsFilteredItemsListBoxVisible;
         this.CurrentListBoxSource = new ObservableCollection<Element>(currentData.CurrentListBoxSource);
-        if(currentData.SearchResults!=null)
-            this.SearchResults = new ObservableCollection<Element>(currentData.SearchResults);
-        if(currentData.FiltersResults!=null)
-            this.FiltersResults = new ObservableCollection<Element>(currentData.FiltersResults);
     }
     #endregion
 }

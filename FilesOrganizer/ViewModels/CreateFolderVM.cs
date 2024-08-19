@@ -1,4 +1,6 @@
-﻿using FilesOrganizer.Models;
+﻿using FilesOrganizer.Commands;
+using FilesOrganizer.Helpers;
+using FilesOrganizer.Models;
 using MediaToolkit.Options;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,18 +12,19 @@ namespace FilesOrganizer.ViewModels.Commands;
 public class CreateFolderVM : Core.ViewModel, INotifyPropertyChanged
 {
     TransmittedData _currentData;
-    private Commands _commands;
+    private CreateFolderCommands _commands;
     private Element _selectedElement;
     private string _initPath;
     private int _pozInList = 0;
     private List<string> _backStack = new List<string>();
-    private Category _selectedCategory; // = new Category { Name = "White", Col = Brushes.White, CategoryName = "All Items", TextColor="Black" };
+    private Category _selectedCategory; // = new Category { Name = "White", SolidColorBrushColor = Brushes.White, CategoryName = "All Items", TextColor="Black" };
     private string _selectedPriority; // = "All Items";
     private string _selectedLanguage; // = "All Items";
     private string _selectedCodeLanguage; // = "All Items";
     private bool? _filterType;
     private bool _searchApplied;
-
+    public ObservableCollection<Element> AllItems { get; set; } 
+    public string NewFolderPath { get; set; }
 
     public CreateFolderVM(TransmittedData currentData, int poz, string initPath, bool? filter, Category category, string priority, string language, string codeLanguage, bool search)
     {
@@ -34,6 +37,22 @@ public class CreateFolderVM : Core.ViewModel, INotifyPropertyChanged
         SelectedLanguage = language;
         SelectedCodeLanguage = codeLanguage;
         SearchApplied = search;
+        AllItems = new ObservableCollection<Element>(CurrentData.AllItems);
+
+        //apdatez toate elementele sa ramana doar cele necesare
+        bool allFiltersAreDefault = (SelectedPriority == "All Items" || SelectedPriority == null) &&
+                        (SelectedCategory == null || SelectedCategory.CategoryName == "All Items") &&
+                        (SelectedLanguage == "All Items" || SelectedLanguage == null) &&
+                        (SelectedCodeLanguage == "All Items" || SelectedCodeLanguage == null);
+
+        if (!allFiltersAreDefault)
+        {
+            CurrentData.AllItems = ViewerPageHelper.ReturnAllItemsToCreateFolder(this);
+        }
+        else
+        {
+            CurrentData.AllItems = new ObservableCollection<Element>(CurrentData.AllItems.Where(e => e.Path.Contains(InitPath)).ToList());
+        }
     }
 
     public bool SearchApplied
@@ -161,13 +180,13 @@ public class CreateFolderVM : Core.ViewModel, INotifyPropertyChanged
             OnPropertyChanged(nameof(CurrentData));
         }
     }
-    public Commands Commands
+    public CreateFolderCommands Commands
     {
         get
         {
             if (_commands == null)
             {
-                _commands = new Commands(this);
+                _commands = new CreateFolderCommands(this);
             }
             return _commands;
         }

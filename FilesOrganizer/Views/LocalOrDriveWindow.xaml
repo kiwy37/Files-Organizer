@@ -7,22 +7,26 @@
         xmlns:vm="clr-namespace:FilesOrganizer.ViewModels.Commands"
         xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
         mc:Ignorable="d"
-        Title="LocalOrDriveWindow" Height="200" Width="400"
+        Title="LocalOrDriveWindow" Height="200" Width="325" Background="#86B6F6"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="ToolWindow">
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
-        <Button Command="{Binding LocalButtonCommand}" Background="Transparent" Grid.Column="0" Margin="20" BorderBrush="Transparent">
+        <Button Command="{Binding LocalButtonCommand}" Background="Transparent" Grid.Column="0" Margin="20" BorderBrush="Transparent" Foreground="Black">
             <Button.ToolTip>
                 <ToolTip Content="Upload space from local computer" />
             </Button.ToolTip>
             <materialIcons:MaterialIcon Kind="Computer"/>
         </Button>
-        <Button Command="{Binding DriveButtonCommand}" Background="Transparent" Grid.Column="1" Margin="20" BorderBrush="Transparent">
+
+        <GridSplitter Grid.Column="1" Width="3" Background="Black" HorizontalAlignment="Center"/>
+
+        <Button Command="{Binding DriveButtonCommand}" Background="Transparent" Grid.Column="2" Margin="20" BorderBrush="Transparent" Foreground="Black">
             <Button.ToolTip>
                 <ToolTip Content="Upload space from Google Drive" />
             </Button.ToolTip>
